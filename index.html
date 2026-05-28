@@ -68,36 +68,23 @@
             </div>
 
             <div class="flex flex-col gap-3">
-                <button onclick="openGuestModal('confirmo')" class="w-full bg-pitch-neon text-pitch-deep font-extrabold uppercase py-3 rounded-xl">Confirmar Asistencia</button>
-                <button onclick="openGuestModal('no-asisto')" class="w-full bg-red-900/40 text-red-200 font-extrabold uppercase py-3 rounded-xl border border-red-500/30">No puedo asistir</button>
+                <button onclick="confirmAttendance()" class="w-full bg-pitch-neon text-pitch-deep font-extrabold uppercase py-3 rounded-xl">Confirmar Asistencia</button>
+                <button onclick="declineAttendance()" class="w-full bg-red-900/40 text-red-200 font-extrabold uppercase py-3 rounded-xl border border-red-500/30">No puedo asistir</button>
             </div>
         </div>
     </main>
 
-    <!-- Modal para Nombre -->
-    <div id="guestModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center p-4 z-50">
-        <div class="bg-zinc-900 rounded-3xl max-w-sm w-full p-6 space-y-4">
-            <h3 class="text-white font-bold text-lg">¿Quién confirma?</h3>
-            <input type="text" id="guestName" placeholder="Escribe tu nombre aquí" class="w-full p-3 bg-zinc-800 text-white rounded-xl border border-zinc-700">
-            <div class="flex gap-2">
-                <button onclick="submitResponse()" class="flex-1 bg-pitch-neon text-black font-bold py-3 rounded-xl">Enviar</button>
-                <button onclick="closeGuestModal()" class="flex-1 bg-zinc-700 text-white font-bold py-3 rounded-xl">Cancelar</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        let currentStatus = '';
-        function openGuestModal(status) { currentStatus = status; document.getElementById('guestModal').classList.remove('hidden'); document.getElementById('guestModal').classList.add('flex'); }
-        function closeGuestModal() { document.getElementById('guestModal').classList.add('hidden'); document.getElementById('guestModal').classList.remove('flex'); }
+        const phone = '573136688704'; // Puedes cambiar este número por el tuyo
+
+        function confirmAttendance() { 
+            const text = '⚽¡Hola! soy xxxxxxxxxxxx y confirmo mi asistencia al partido de Juanjo⚽';
+            window.location.href = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`; 
+        }
         
-        function submitResponse() {
-            const name = document.getElementById('guestName').value;
-            if(!name) { alert("Por favor escribe tu nombre"); return; }
-            const phone = localStorage.getItem('inv_phone') || '573136688704';
-            const text = currentStatus === 'confirmo' ? `¡Hola! Confirmo mi asistencia al partido de Juanjo. Soy: ${name}` : `¡Hola! Lamentablemente no podré asistir al partido de Juanjo. Soy: ${name}`;
-            window.location.href = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`;
-            closeGuestModal();
+        function declineAttendance() { 
+            const text = '⚽¡Hola! soy xxxxxxxxxxxx y no podré asistir al partido de Juanjo⚽';
+            window.location.href = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`; 
         }
     </script>
 </body>
