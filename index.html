@@ -24,9 +24,7 @@
 
     <main class="w-full max-w-4xl flex flex-col lg:flex-row gap-8 items-center justify-center my-auto">
         <div class="card-container w-full max-w-xs flex justify-center">
-            <div id="futCard" class="fut-card relative w-[310px] h-[500px] rounded-3xl overflow-hidden flex flex-col p-5">
-                
-                <!-- Encabezado de Carta -->
+            <div class="fut-card relative w-[310px] h-[500px] rounded-3xl overflow-hidden flex flex-col p-5">
                 <div class="flex justify-between items-start mb-2">
                     <div class="flex flex-col items-center leading-none">
                         <span class="text-5xl font-sports font-bold text-pitch-neon tracking-tighter">13</span>
@@ -34,23 +32,11 @@
                     </div>
                 </div>
 
-                <!-- Gráfico Radial de Telaraña -->
                 <div class="flex-grow flex flex-col items-center justify-center py-2">
                     <svg class="w-48 h-48" viewBox="0 0 100 100">
-                        <!-- Telaraña (Grid) -->
                         <polygon points="50,15 85,35 85,65 50,85 15,65 15,35" fill="none" stroke="#ffffff33" stroke-width="0.5"/>
                         <polygon points="50,30 75,45 75,55 50,70 25,55 25,45" fill="none" stroke="#ffffff22" stroke-width="0.5"/>
-                        <line x1="50" y1="50" x2="50" y2="15" stroke="#ffffff22" stroke-width="0.5"/>
-                        <line x1="50" y1="50" x2="85" y2="35" stroke="#ffffff22" stroke-width="0.5"/>
-                        <line x1="50" y1="50" x2="85" y2="65" stroke="#ffffff22" stroke-width="0.5"/>
-                        <line x1="50" y1="50" x2="50" y2="85" stroke="#ffffff22" stroke-width="0.5"/>
-                        <line x1="50" y1="50" x2="15" y2="65" stroke="#ffffff22" stroke-width="0.5"/>
-                        <line x1="50" y1="50" x2="15" y2="35" stroke="#ffffff22" stroke-width="0.5"/>
-                        
-                        <!-- Skill Polygon (Valores: 85, 93, 89, 90, 76, 46) -->
                         <polygon points="50,22 83,38 83,62 50,78 28,62 28,38" fill="#39FF14" fill-opacity="0.5" stroke="#39FF14" stroke-width="1.5"/>
-                        
-                        <!-- Etiquetas de Valores en los vértices -->
                         <text x="50" y="20" fill="white" font-size="7" font-weight="bold" text-anchor="middle">85</text>
                         <text x="91" y="37" fill="white" font-size="7" font-weight="bold" text-anchor="middle">93</text>
                         <text x="91" y="66" fill="white" font-size="7" font-weight="bold" text-anchor="middle">89</text>
@@ -58,14 +44,11 @@
                         <text x="9" y="66" fill="white" font-size="7" font-weight="bold" text-anchor="middle">76</text>
                         <text x="9" y="37" fill="white" font-size="7" font-weight="bold" text-anchor="middle">46</text>
                     </svg>
-
-                    <!-- Nombre Abajo (Sin tapar gráfico) -->
                     <div class="mt-4 bg-black/60 px-6 py-2 rounded-full border border-pitch-neon/40 shadow-xl">
                         <span class="font-sports text-3xl font-bold uppercase text-white" id="displayPlayerName">JUANJO</span>
                     </div>
                 </div>
 
-                <!-- Footer de Habilidades Simplificadas -->
                 <div class="grid grid-cols-2 gap-x-2 gap-y-1 bg-black/60 p-2 rounded-xl text-left">
                     <span class="text-[9px] font-bold text-gray-300 uppercase">🧤 Estirada</span><span class="font-sports text-xs text-pitch-neon text-right">85</span>
                     <span class="text-[9px] font-bold text-gray-300 uppercase">⚡ Reflejos</span><span class="font-sports text-xs text-pitch-neon text-right">93</span>
@@ -77,43 +60,45 @@
 
         <div class="flex-1 w-full space-y-5 px-4">
             <h1 class="text-4xl font-sports font-bold text-white uppercase leading-none">¡CONVOCATORIA DE <span class="text-pitch-neon">JUANJO #13</span>!</h1>
-            <p class="text-gray-300 italic">"Acompáñame a tapar los mejores momentos de este nuevo año, defender los colores de la amistad en la cancha y celebrar juntos este gran partido de la vida."</p>
+            <p class="text-gray-300 italic">"Acompáñame a celebrar mi cumpleaños y disfrutar de un gran partido de fútbol."</p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div class="glass-panel p-3 rounded-xl flex items-center gap-3"><i class="fa-solid fa-calendar-days text-pitch-neon"></i><div><span class="text-[10px] block text-gray-400 uppercase">Fecha</span><span class="font-bold text-sm">Sábado 30 de Junio</span></div></div>
                 <div class="glass-panel p-3 rounded-xl flex items-center gap-3"><i class="fa-solid fa-location-dot text-pitch-neon"></i><div><span class="text-[10px] block text-gray-400 uppercase">Lugar</span><span class="font-bold text-sm">Canchas Sintéticas EL CUBO</span></div></div>
-                <div class="glass-panel p-3 rounded-xl flex items-center gap-3"><i class="fa-solid fa-clock text-pitch-neon"></i><div><span class="text-[10px] block text-gray-400 uppercase">Hora Citación</span><span class="font-bold text-sm">9:30 AM</span></div></div>
-                <div class="glass-panel p-3 rounded-xl flex items-center gap-3"><i class="fa-solid fa-circle-play text-pitch-neon"></i><div><span class="text-[10px] block text-gray-400 uppercase">Inicio Juego</span><span class="font-bold text-sm">10:00 AM</span></div></div>
             </div>
 
             <div class="flex flex-col gap-3">
-                <button onclick="confirmAttendance()" class="w-full bg-pitch-neon text-pitch-deep font-extrabold uppercase py-3 rounded-xl hover:bg-white transition-all">Confirmar Asistencia</button>
-                <button onclick="declineAttendance()" class="w-full bg-red-900/40 text-red-200 font-extrabold uppercase py-3 rounded-xl border border-red-500/30">No puedo asistir</button>
+                <button onclick="openGuestModal('confirmo')" class="w-full bg-pitch-neon text-pitch-deep font-extrabold uppercase py-3 rounded-xl">Confirmar Asistencia</button>
+                <button onclick="openGuestModal('no-asisto')" class="w-full bg-red-900/40 text-red-200 font-extrabold uppercase py-3 rounded-xl border border-red-500/30">No puedo asistir</button>
             </div>
         </div>
     </main>
 
-    <div id="setupModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center p-4 z-50">
+    <!-- Modal para Nombre -->
+    <div id="guestModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center p-4 z-50">
         <div class="bg-zinc-900 rounded-3xl max-w-sm w-full p-6 space-y-4">
-            <h3 class="text-white font-bold border-b border-zinc-800 pb-2">Configuración Admin</h3>
-            <input type="text" id="inputName" value="JUANJO" class="w-full p-2 bg-zinc-800 text-white rounded">
-            <input type="text" id="inputPhone" value="573136688704" class="w-full p-2 bg-zinc-800 text-white rounded">
-            <button onclick="applyChanges()" class="w-full bg-pitch-neon text-black font-bold py-2 rounded">Guardar Cambios</button>
+            <h3 class="text-white font-bold text-lg">¿Quién confirma?</h3>
+            <input type="text" id="guestName" placeholder="Escribe tu nombre aquí" class="w-full p-3 bg-zinc-800 text-white rounded-xl border border-zinc-700">
+            <div class="flex gap-2">
+                <button onclick="submitResponse()" class="flex-1 bg-pitch-neon text-black font-bold py-3 rounded-xl">Enviar</button>
+                <button onclick="closeGuestModal()" class="flex-1 bg-zinc-700 text-white font-bold py-3 rounded-xl">Cancelar</button>
+            </div>
         </div>
     </div>
 
-    <button id="setupBtn" onclick="toggleSetupModal()" class="hidden fixed bottom-4 right-4 bg-zinc-800 p-3 rounded-full text-white"><i class="fa-solid fa-gear"></i></button>
-
     <script>
-        function toggleSetupModal() { document.getElementById('setupModal').classList.toggle('hidden'); document.getElementById('setupModal').classList.toggle('flex'); }
-        function applyChanges() { 
-            localStorage.setItem('inv_phone', document.getElementById('inputPhone').value);
-            document.getElementById('displayPlayerName').innerText = document.getElementById('inputName').value;
-            toggleSetupModal(); 
+        let currentStatus = '';
+        function openGuestModal(status) { currentStatus = status; document.getElementById('guestModal').classList.remove('hidden'); document.getElementById('guestModal').classList.add('flex'); }
+        function closeGuestModal() { document.getElementById('guestModal').classList.add('hidden'); document.getElementById('guestModal').classList.remove('flex'); }
+        
+        function submitResponse() {
+            const name = document.getElementById('guestName').value;
+            if(!name) { alert("Por favor escribe tu nombre"); return; }
+            const phone = localStorage.getItem('inv_phone') || '573136688704';
+            const text = currentStatus === 'confirmo' ? `¡Hola! Confirmo mi asistencia al partido de Juanjo. Soy: ${name}` : `¡Hola! Lamentablemente no podré asistir al partido de Juanjo. Soy: ${name}`;
+            window.location.href = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`;
+            closeGuestModal();
         }
-        function confirmAttendance() { window.location.href = `https://api.whatsapp.com/send?phone=${localStorage.getItem('inv_phone') || '573136688704'}&text=¡Hola! Confirmo mi asistencia al partido de Juanjo.`; }
-        function declineAttendance() { window.location.href = `https://api.whatsapp.com/send?phone=${localStorage.getItem('inv_phone') || '573136688704'}&text=¡Hola! Lamentablemente no podré asistir al partido de Juanjo.`; }
-        window.onload = () => { if(window.location.search.includes('admin=true') || window.location.hash === '#admin') document.getElementById('setupBtn').classList.remove('hidden'); };
     </script>
 </body>
 </html>
